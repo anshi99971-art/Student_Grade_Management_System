@@ -1,24 +1,43 @@
-# Student_Grade_Management_System
-# 🎓 Student Grade Management System
+def calculate_grade(avg):
+    if avg >= 90:
+        return 'A+'
+    elif avg >= 80:
+        return 'A'
+    elif avg >= 70:
+        return 'B'
+    elif avg >= 60:
+        return 'C'
+    elif avg >= 50:
+        return 'D'
+    else:
+        return 'F'
 
-This is a simple Python console-based project that allows you to manage student marks and grades.
+students = []
 
-## 🚀 Features
-- Enter student names and marks
-- Automatically calculate total and average
-- Assign grades based on average marks
-- Display student report
+n = int(input("Enter number of students: "))
 
-## 🧠 Topics Used
-- Conditional Statements
-- Loops
-- Functions
-- Lists
-- Dictionaries
+for i in range(n):
+    print(f"\nEnter details for Student {i+1}")
+    name = input("Name: ")
+    marks = []
 
-## 📌 How to Run
+    for j in range(3):
+        mark = int(input(f"Enter marks for Subject {j+1}: "))
+        marks.append(mark)
 
-Make sure you have Python installed. Then run:
+    total = sum(marks)
+    avg = total / 3
+    grade = calculate_grade(avg)
 
-```bash
-python main.py
+    student_data = {
+        "name": name,
+        "marks": marks,
+        "total": total,
+        "average": avg,
+        "grade": grade
+    }
+
+    students.append(student_data)
+
+print("\n=== Student Report ===")
+for stu
